@@ -19,7 +19,7 @@ function textcheck() {
     let specialCharCount = inputText.replace(/[a-zA-Z0-9\s]/g, "").length;
     
     let pronounMatches = inputText.match(/\b(he|she|it|they|we|you|I)\b/gi) || [];
-    let prepositionMatches = inputText.match(/\b(in|on|at|by|with|about|against|between|into|through|during|before|after)\b/gi) || [];
+    let prepositionMatches = inputText.match(/\b(in|on|at|by|with|about|against|between|into|through|during|before|after|under|behind|front)\b/gi) || [];
     let articleMatches = inputText.match(/\b(a|an|the)\b/gi) || [];
 
     document.getElementById("output").innerHTML = `
