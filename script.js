@@ -1,20 +1,17 @@
-// this is for when u inspect in a website and check output in console to track the clicks and when and where it clicks
-
 document.addEventListener("click", (e) => {
     const timestamp = new Date().toISOString();
-    console.log(`${timestamp} - Action: Click - Target: ${e.target.tagName.toLowerCase()}`);
+    const targetText = e.target.textContent.trim() || e.target.id || e.target.tagName.toLowerCase();
+    console.log(`${timestamp} - Action: Click - Target: ${targetText}`);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log(`${new Date().toISOString()} - Action: Document Loaded`);
 });
 
-// just go thru the text and do all the functions asked
-
 function gothrutext() {
-    const text = document.getElementById("textInput").value;
+    const text = document.getElementById("textInput").value.trim();
     const letters = text.replace(/[^a-zA-Z]/g, "").length;
-    const words = text.trim().split(/\s+/).length;
+    const words = text.length ? text.split(/\s+/).length : 0;
     const spaces = (text.match(/ /g) || []).length;
     const newlines = (text.match(/\n/g) || []).length;
     const specialChars = text.replace(/[a-zA-Z0-9\s]/g, "").length;
