@@ -1,11 +1,17 @@
 document.addEventListener("click", (e) => {
     const timestamp = new Date().toISOString();
     const targetText = e.target.textContent.trim() || e.target.id || e.target.tagName.toLowerCase();
-    console.log(`${timestamp} - Action: Click - Target: ${targetText}`);
+    console.log(`${timestamp} - Action : Click , Target: ${targetText}`);
+});
+
+document.addEventListener("input", (e) => {
+    const timestamp = new Date().toISOString();
+    const targetValue = e.target.value;
+    console.log(`${timestamp} - Action : Text Input , Target: ${targetValue}`);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log(`${new Date().toISOString()} - Action: Document Loaded`);
+    console.log(`${new Date().toISOString()} - Action : Loaded Doc File`);
 });
 
 function gothrutext() {
